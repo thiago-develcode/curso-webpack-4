@@ -1,10 +1,20 @@
 body {margin: 0;background-color: #444;}
+.profile {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+img {
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0 0 20px black;
+}
 h1 {
-    height: 100vh;
-    display: flex;
     color: white;
-    align-items: center;
-    justify-content: center;
     font: 5em;
     font-family: sans-serif;
     text-shadow: 0 0 20px black;
