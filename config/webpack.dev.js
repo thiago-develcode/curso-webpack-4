@@ -16,58 +16,67 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader'
-                    }
-                ]
-            },
-            {
-              test: /\.html$/,
+          {
+            test: /\.js$/,
+            use: [
+              {
+                loader: 'babel-loader'
+              }
+            ],
+            exclude: /node_modules/
+          },
+          {
+              test: /\.css$/,
               use: [
-                {
-                  loader: 'file-loader',
-                  options: {
-                    name: '[name].html'
+                  {
+                      loader: 'style-loader'
+                  },
+                  {
+                      loader: 'css-loader'
                   }
-                },
-                {
-                  loader: 'extract-loader'
-                },
-                {
-                  loader: 'html-loader',
-                  options: {
-                    attributes: {
-                      list: [
-                        {
-                          tag: 'img',
-                          attribute: 'src',
-                          type: 'src'
-                        }
-                      ]
-                    }
-                  }
-                }
               ]
-            },
-            {
-              test: /\.(jpg|png|gif|svg)$/,
-              use: [
-                {
-                  loader: 'file-loader',
-                  options: {
-                    name: '[name].[ext]',
-                    outputPath: 'images'
+          },
+          {
+            test: /\.html$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name: '[name].html'
+                }
+              },
+              {
+                loader: 'extract-loader'
+              },
+              {
+                loader: 'html-loader',
+                options: {
+                  attributes: {
+                    list: [
+                      {
+                        tag: 'img',
+                        attribute: 'src',
+                        type: 'src'
+                      }
+                    ]
                   }
                 }
+              }
+            ]
+          },
+          {
+            test: /\.(jpg|png|gif|svg)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name: '[name].[ext]',
+                  outputPath: 'images'
+                }
+              }
 
-              ]
-            }
+            ]
+          }
         ]
     }
 

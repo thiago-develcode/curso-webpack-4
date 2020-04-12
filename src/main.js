@@ -1,2 +1,6 @@
-import './main.css'
-import './index.html'
+require('./main.css')
+require('./index.html')
+
+var a = () => {
+  console.log('hello arrow functions')
+}
